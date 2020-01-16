@@ -1,0 +1,80 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+  <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% if title%}
+    <title> iMARKET - {{ title }}</title>
+  {% else %}
+    <title> iMARKET </title>
+  {% endif%}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Font Awesome -->
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
+{% block head %}
+{% endblock %}
+</head>
+  
+  <body class="fixed-sn cyan-skin">
+
+    <!--Double navigation-->
+    
+
+  
+
+
+
+
+
+ {% if messages %}
+  {% for message in messages %}
+  <div class=" text-center alert alert-{{ message.tags }}">
+   {{ message }} 
+   </div>
+  {% endfor %}
+  {% endif %}
+
+  
+    {% block content %}
+     {% endblock %}
+  
+
+
+
+
+
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!-- JQuery -->
+<script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
+<!-- JavaScript -->
+
+  
+  <!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"></script>
+
+{% block script %}
+{% endblock %}
+
+</body>
+</html>

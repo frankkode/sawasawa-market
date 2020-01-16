@@ -1,0 +1,15 @@
+from django.test import TestCase
+
+# Create your tests here.
+from .models import Post
+
+# Create your tests here.
+class PostTests(TestCase):
+    """
+    Here we'll define the tests that we'll run against our
+    Post model
+    """
+
+    def test_str(self):
+        test_name = Post(name='A post')
+        self.assertEqual(str(test_name), 'A post')

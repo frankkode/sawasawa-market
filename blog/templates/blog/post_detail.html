@@ -1,0 +1,120 @@
+{% extends 'blog/base.html' %}
+{% block content  %}
+{% include 'blog/navigation.html' %}
+
+<div class="container">
+<div class="row">
+
+<div class="calling">
+<div class="text-center d-none d-sm-none d-md-none d-lg-block">  
+<!--Unique-->
+<a href="{% url 'cars:car_index' %}" class="btn black-text margin-bottom-cat margin-right-cat" > <i class="fas fa-car fa-3x green-text"></i>🚗 Auto </a>
+
+<!--Pink-->
+<a  href="{% url 'houses:house_index' %}" class="btn margin-bottom-cat margin-right-cat" ><i class="fas fa-city fa-3x pink-text"></i>🏪 Commercial </a>
+<!--Indigo-->
+<a  href="{% url 'houses:house_index' %}" class="btn margin-bottom-cat margin-right-cat" ><i class="fas fa-store-alt fa-3x indigo-text"></i>🏠 house for sell/rent </a>
+
+<!--Purple-->
+<a href="{% url 'jobbs:job_index' %}" class="btn margin-bottom-cat margin-right-cat" aria-hidden="true"><i class="fas fa-user-graduate fa-3x purple-text"></i><i class="fas fa-user-md fa-3x deep-purple-text"></i><strong> training & jobs</a>
+    
+</div>
+</div>
+ <!-- Grid row -->
+
+
+
+<!-- Card Regular -->
+
+
+
+<div class="row gallery text-center">
+     {% for p in post.images_set.all %}
+    {% if p.image %}
+      <div class="col-md-3 text-center ">
+      <a href="#">
+        <img src="{{ p.image.url }}" alt="" class="img-thumbnail imgs-details" onclick="myFunction(this);">
+     </a>
+      </div>
+
+    {% endif %}
+    {% endfor %}
+  </div>
+  
+
+<!-- The expanding image container -->
+<div class="container">
+  <!-- Close the image -->
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+
+  <!-- Expanded image -->
+  <img id="expandedImg" style="width:80%">
+
+  <!-- Image text -->
+  <div id="imgtext"></div>
+</div>
+
+
+        
+        <div class="col-md-12 text-center">
+              <a class="btn blue-text accent-1 font-weight-bold">Price: $ {{ post.price }}-</a>
+              
+              <p class="blue-text text-muted ">------</p>
+          </div>
+          
+  <!-- Section: Block Content -->
+ {% if post.author == user %}
+          <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' post.id %}">Update</a>
+            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' post.id %}">Delete</a>
+          </div>
+  {% endif %}
+</div>
+</div>
+
+
+  <div class="container py-5  z-depth-1">
+  <section class="p-md-3 mx-md-5 text-lg-left">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="font-weight-bold mb-3 text-center">DESCRIPTION</h2>
+        <p class="lead py-3">
+          {{ post.description }}
+        </p>
+        <h3 class="orange-text text-center font-weight-bold">ADDRESS 
+          
+        </h3>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
+        <div class=" mt-3 text-center">
+          <i class="fa fa-map-marker-alt fa-3x indigo-text mb-4"></i>
+          <h4 class="font-weight-bold">{{ post.address }}</h4>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
+        <div class=" mt-3 text-center">
+          <i class="far fa-map fa-3x pink-text mb-4"></i>
+          <h4 class="font-weight-bold">{{ post.city }}</h4>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-md-0 mb-5">
+        <div class=" mt-3 text-center">
+          <i class="fa fa-globe-africa fa-3x amber-text mb-4"></i>
+         	<h4 class="font-weight-bold">{{ post.country }}</h4>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-md-0 mb-5">
+        <div class=" mt-3 text-center">
+          <i class="fa fa-street-view fa-3x green-text mb-4"></i>
+         	<h4 class="font-weight-bold">Tel: {{ post.phone }}</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% include 'blog/footer.html' %}
+{% endblock content %}
+    

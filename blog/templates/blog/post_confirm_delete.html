@@ -1,0 +1,40 @@
+{% extends 'blog/base.html' %}
+
+{% block content  %}
+{% include 'blog/navigation.html' %}
+
+
+<div class="container">
+
+    <div class="row">
+    
+<!-- Default form register -->
+<form class="register-form-center border border-light p-5" method="POST">
+    {% csrf_token %}
+   
+    
+    <fieldset class="form-group ">
+    <p class="h4 mb-4">DELETE ITEM </p>
+    <h2>Are you sure you want to delete your Post? "{{ object.title }}"</h2>
+
+    </fieldset>
+    <!-- Newsletter -->
+    <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="defaultRegisterFormNewsletter">
+        <label class="custom-control-label" for="defaultRegisterFormNewsletter">Subscribe to our newsletter</label>
+    </div>
+
+    <!-- Sign up button -->
+    <button class="btn btn-danger btn-sm mt-1 mb-1" type="submit">Yes, Delete</button>
+    <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-detail' object.id %}"> Cancel</a>
+
+<!--
+</form>
+<!-- Default form register -->
+</div>
+    </div>
+</div>
+<div class="django_form_clear_formpost">
+{% include 'blog/footer.html' %}
+</div>
+{% endblock content %}

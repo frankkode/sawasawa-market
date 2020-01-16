@@ -1,0 +1,30 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+{% include 'blog/navigation.html' %}
+<h1 class="text-center">House for SALE</h1>
+<div class="container">
+<div class="row">
+{% for house in houses %}
+    <div class="col-md-4">
+        <div class="card mb-2 rounded z-depth-2">
+            <img class="card-img-top img-thumbnail img-fluid imgs-details" src="{{ house.image.url }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ house.title }}</h5>
+                <p class="card-text">{{ house.description|linebreaks|truncatewords:10 }}</p>
+                <a href="{% url 'houses:house_detail' id=house.id %}"
+                   class="btn btn-primary">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+
+<div class="django_form_clear">
+{% include 'blog/footer.html' %}
+</div>
+{% endblock %}
+ 

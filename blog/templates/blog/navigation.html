@@ -1,0 +1,86 @@
+
+
+
+{% extends 'blog/base.html' %}
+
+{% block content  %}
+
+
+<!--Navbar-->
+  <navbar class="navbar navbar-expand-lg navbar-dark rgba-red-strong">
+<a><img class="navbar-brand" src="media/logo.png" alt="log-image" style="width:50px;height:50px;"></img>Sawasawa-Market</a> 
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'blog-home'%}"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item ">
+            <a class="nav-link font-weight-bold success-lighter-hover" href="{% url 'blog-home' %}">Home </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold success-lighter-hover" href="{% url 'blog-about' %}">About us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold success-lighter-hover" href="{% url 'blogo_index' %}">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold success-lighter-hover" href="{% url 'jobbs:job_index' %}">Jobs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold success-lighter-hover" href="{% url 'blog-contact' %}">Contact</a>
+          </li>
+          <li class="nav-item btn-group">
+            <a class="nav-link dropdown-toggle font-weight-bold success-lighter-hover" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">Properties
+            </a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">All</a>
+              <a class="dropdown-item" href="{% url 'houses:house_index' %}"><i class="fas fa-home green-text"></i> Villa</a>
+              <a class="dropdown-item" href="{% url 'houses:house_index' %}"><i class="far fa-building red-text"></i> Apartment</a>
+              <a class="dropdown-item" href="{% url 'houses:house_index' %}"><i class="fas fa-city yellow-text"></i> Commercial</a>
+            </div>
+          </li>
+           <li class="nav-item btn-group ">
+            <a class="nav-link dropdown-toggle font-weight-bold success-lighter-hover" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">Automobile
+            </a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">All</a>
+              <a class="dropdown-item" href="{% url 'cars:car_index' %}"><i class="fas fa-car-side yellow-text"></i> Vehicles</a>
+              <a class="dropdown-item" href="{% url 'cars:car_index' %}"><i class="fas fa-motorcycle green-text"></i> Motobike</a>
+              <a class="dropdown-item" href="{% url 'cars:car_index' %}"><i class="fas fa-car-battery red-text"></i> Spare parts</a>
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0 ml-auto" action="{% url 'search' %}" method="GET" value="{{request.GET.q}}">
+        <div >
+    <input class="form-control mr-sm-2" type="text" name='q' placeholder="Search" aria-label="Search">
+    </div>
+    
+  </form>
+  
+
+
+
+  <div class="navbar-nav float-right">
+  {% if user.is_authenticated %}
+  <a class="nav-item nav-link font-weight-bold success-lighter-hover" href="{% url 'profile' %}">Profile</a>
+  <a class="nav-item nav-link  font-weight-bold success-lighter-hover" href="{% url 'post-create' %}">Sell item</a>
+  <a class="nav-item nav-link font-weight-bold success-lighter-hover" href="{% url 'logout' %}">Log Out</a>
+ 
+
+  {% else %}
+        <a class="nav-item nav-link font-weight-bold success-lighter-hover " href="{% url 'login' %}">Log In</a>
+        <a class="nav-item nav-link font-weight-bold success-lighter-hover" href="{% url 'register' %}">Register</a>
+          <a class="nav-item nav-link font-weight-bold success-lighter-hover " href="{% url 'login' %}">Sell item</a>
+  {% endif %}
+  </div>
+      </div>
+    </div>
+  </navbar>
+  <!-- Navbar-->
+ {% endblock %}
+
+

@@ -1,0 +1,55 @@
+{% extends "blog/base.html" %}
+{% block content %}
+{% include 'blog/navigation.html' %}
+<div class="col-md-8 offset-md-2">
+    <h1>{{ post.title }}</h1>
+    <small>
+        {{ post.created_on.date }} |&nbsp;
+        Categories:&nbsp;
+        {% for category in post.categories.all %}
+        <a href="{% url 'blogo_category' category.name %}">
+            {{ category.name }}
+        </a>&nbsp;
+        {% endfor %}
+<!--{{ share_string }}-->
+SHARE:
+<a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}">
+<i class="fab fa-facebook-square"></i>
+</a>
+<a href="https://twitter.com/home?status={{share_string}}%20{{ request.build_absolute_uri }}">
+<i class="fab fa-twitter-square"></i>
+</a>
+<a href='https://plus.google.com/share?url={{ request.build_absolute_uri }}'> <i class="fab fa-google-plus-square"></i></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}&title={{ post.title}}&summary={{ share_string}}&source={{ request.build_absolute_uri }}">
+<i class="fab fa-linkedin"></i>
+</a>
+    </small>
+    <p>{{ post.body | linebreaks }}</p>
+    
+    <h3>Comments:</h3>
+    {% for comment in comments %}
+    <p>
+        On {{comment.created_on.date }}&nbsp;
+        <b>{{ comment.author }}</b> wrote:
+    </p>
+    <p>{{ comment.body }}</p>
+    <hr>
+    {% endfor %}
+
+    <h3 class="text-center">Leave a comment:</h3>
+    <form action="/blogo/{{ post.pk }}/" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.author }}
+        </div>
+        <div class="form-group">
+            {{ form.body }}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<div class="django_form_clear">
+{% include 'blog/footer.html' %}
+</div>
+{% endblock %}

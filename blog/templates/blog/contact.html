@@ -1,0 +1,118 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content  %}
+    
+{% include 'blog/navigation.html' %}
+
+
+
+
+
+ <div class="container mt-5">
+ <!--Section: Content-->
+    <section class="dark-grey-text mb-5">
+      <style>
+        .map-container-section {
+          overflow:hidden;
+          padding-bottom:10.25%;
+          position:relative;
+          height:0;
+        }
+        .map-container-section iframe {
+          left:0;
+          top:0;
+          height:100%;
+          width:100%;
+          position:absolute;
+        }
+      </style>
+
+      <!-- Section heading -->
+      <h3 class="font-weight-bold text-center mb-4">Contact Us</h3>
+      <!-- Section description -->
+      <p class="text-center w-responsive mx-auto pb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam
+        eum porro a pariatur veniam.</p>
+
+      <!-- Grid row -->
+      <!-- Grid column -->
+        <div class="col-lg-8 ">
+
+          <!--Google map-->
+          <div id="map-container-section" class="z-depth-1-half map-container-section mb-4" style="height: 400px">
+            <iframe src="https://maps.google.com/maps?q=Manhatan&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0"
+              style="border:0" allowfullscreen></iframe>
+          </div>
+          <!-- Buttons-->
+          <div class="row text-center">
+            <div class="col-md-4">
+              <a class="btn-floating ">
+                <i class="fas fa-map-marker-alt blue-text"></i>
+              </a>
+              <p>New York, 94126</p>
+              <p class="mb-md-0">United States</p>
+            </div>
+            <div class="col-md-4">
+              <a class="btn-floating ">
+                <i class="fas fa-phone blue-text"></i>
+              </a>
+              <p>+ 01 234 567 89</p>
+              <p class="mb-md-0">Mon - Fri, 8:00-22:00</p>
+            </div>
+            <div class="col-md-4">
+              <a class="btn-floating ">
+                <i class="fas fa-envelope blue-text accent-1"></i>
+              </a>
+              <p>masasimpafra@gmail.com</p>
+              <p class="mb-0">frankmasabo55@gmail.com</p>
+            </div>
+          </div>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+<div class="row ">
+        <!-- Grid column -->
+        <div class="col-lg-6 col-sm-offset-3  mb-4 ">
+
+          <!-- Form with header -->
+              
+              <h1 class="text-center">Contact Us</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+            <button class="btn waves-effect waves-light btn-light-blue" type="submit">Send Email</button>
+            </form>
+            
+</div>
+</div>
+        
+    </section>
+    <!--Section: Content-->
+
+
+  </div>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="django_form_clear">
+{% include 'blog/footer.html' %}
+</div>
+{% endblock content %}
+    

@@ -1,0 +1,186 @@
+{% extends 'blog/base.html' %}
+{% block content  %}
+
+{% include 'blog/navigation.html' %}
+
+
+
+  <!--calling image-->
+  <section class=" dark-grey-text">
+
+  	<!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-12">
+       <!--   <img class=" calling-image" src="/media/modern-villa.jpg" alt="madern-villa image">-->
+            <a href="#!">
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+    </div>
+    <!-- Grid row -->
+
+
+  <hr class="mb-5 mt-4">
+
+  </section>
+  <!--end calling image-->
+
+
+
+
+ 
+<div class="calling">
+<div class="text-center d-none d-sm-none d-md-none d-lg-block">  
+<!--Unique-->
+<a href="{% url 'cars:car_index' %}" class="btn black-text margin-bottom-cat margin-right-cat" > <i class="fas fa-car fa-3x green-text"></i>🚗 Auto </a>
+
+<!--Pink-->
+<a  href="{% url 'houses:house_index' %}" class="btn margin-bottom-cat margin-right-cat" ><i class="fas fa-city fa-3x pink-text"></i>🏪 Commercial </a>
+<!--Indigo-->
+<a  href="{% url 'houses:house_index' %}" class="btn margin-bottom-cat margin-right-cat" ><i class="fas fa-store-alt fa-3x indigo-text"></i>🏠 house for sell/rent </a>
+
+<!--Purple-->
+<a href="{% url 'jobbs:job_index' %}" class="btn margin-bottom-cat margin-right-cat" aria-hidden="true"><i class="fas fa-user-graduate fa-3x purple-text"></i><i class="fas fa-user-md fa-3x deep-purple-text"></i><strong> training & jobs</a>
+    
+</div>
+</div>
+ <!-- Grid row -->
+
+<div class="flex-container col s12 m6">
+
+    {% for post in posts %}
+    <div class="display_posts">
+<div id="wrap" class="columns_4">
+	<div id="columns" class="columns_4">
+  <figure>
+
+<a href="{% url 'post-detail' post.id %}"><img  src="{{ post.image.url }}" alt="image.image-{{post.title}}" class='card-img-top'/></a>
+
+  
+  <div class="spacing-on-detail text-center">
+	<span><a  href="{% url 'post-detail' post.id %}"><figcaption class="green-text  capitalise text-center text-uppercase">{{ post.title }}</figcaption></a></span><br>
+  <span><a href="{% url 'user-posts' post.author.username %}"><figcaption class="orange-text  text-capitalize">Seller: {{ post.author }}</figcaption></a></span><br>
+  <span class="price "><strong>Price:$ {{ post.price }}-</strong></span><br>
+  <h5 class="blue-text "><small>{{ post.date_posted|date:"F d, Y" }}</small></h5>
+  </div>
+    <a class="button" href="{% url 'post-detail' post.id %}">Read More</a>
+	</figure>
+
+	
+</div>
+</div>
+</div>
+
+{% endfor %}
+</div>
+ <div class="container my-5 py-5 z-depth-1">
+
+
+    <!--Section: Content-->
+    <section class="px-md-5 mx-md-5 text-center dark-grey-text">
+
+      <!--Grid row-->
+      <div class="row d-flex justify-content-center">
+
+        <!--Grid column-->
+        <div class="col-xl-6 col-md-8">
+
+          <h3 class="font-weight-bold">Sell your house</h3>
+
+          <p class="text-muted">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam sapiente
+            molestiae
+            numquam quas, voluptates omnis nulla ea odio.</p>
+
+          <a class="btn btn-info btn-md ml-0 mb-5" href="#" role="button">Sell Now<i class="fa fa-magic ml-2"></i></a>
+
+          <p class="mb-4 font-weight-bold">Trusted by 1 000 000 + cusomers &amp; Real estates</p>
+
+          <!--Grid row-->
+          <div class="row">
+
+            <!--First column-->
+            <div class="col-lg-3 col-md-6 d-flex align-items-center justify-content-center">
+              <img src="https://mdbootstrap.com/img/logo/brands/nike.png" class="img-fluid" alt="Nike - logo"
+                style="max-height: 40px">
+            </div>
+            <!--/First column-->
+
+            <!--Second column-->
+            <div class="col-lg-3 col-md-6 d-flex align-items-center justify-content-center">
+              <img src="https://mdbootstrap.com/img/logo/brands/amazon.png" class="img-fluid" alt="Amazon - logo"
+                style="max-height: 40px">
+            </div>
+            <!--/Second column-->
+
+            <!--Third column-->
+            <div class="col-lg-3 col-md-6 d-flex align-items-center justify-content-center">
+              <img src="https://mdbootstrap.com/img/logo/brands/sony.png" class="img-fluid" alt="Sony - logo"
+                style="max-height: 40px">
+            </div>
+            <!--/Third column-->
+
+            <!--Fourth column-->
+            <div class="col-lg-3 col-md-6 d-flex align-items-center justify-content-center">
+              <img src="https://mdbootstrap.com/img/logo/brands/samsung.png" class="img-fluid" alt="Samsung - logo"
+                style="max-height: 40px">
+            </div>
+            <!--/Fourth column-->
+
+          </div>
+          <!--/Grid row-->
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+
+    </section>
+    <!--Section: Content-->
+
+
+  </div>
+
+
+
+
+<!--pagination-->
+
+
+<div class=" ">
+<ul class="pagination text-center">
+  {% if posts.has_previous %}
+    <li class="page-item">
+    <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+      <a href="?page={{ posts.previous_page_number }}" class="btn btn-outline-info mb-4">Prev</a>
+    </li>
+  {% endif %}
+
+  {% for p in page_range %}
+    {% if posts.number == p %}
+      <li class="page-item active ">
+        <a href="?page={{ p }}" class="btn btn-info mb-4">{{ p }}</a>
+      </li>
+    {% else %}
+      <li class="page-item">
+        <a href="?page={{ p }}" class="btn btn-outline-info mb-4">{{ p }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
+
+  {% if posts.has_next %}
+    <li class="page-item">
+      <a href="?page={{ posts.next_page_number }}" class="btn btn-outline-info mb-4">Next</a>
+      <a class="btn btn-outline-info mb-4" href="?page={{ posts.paginator.num_pages }}">Last</a>
+    </li>
+  {% endif %}
+</ul>
+
+
+
+{% include 'blog/footer.html' %}
+{% endblock content %}
+    

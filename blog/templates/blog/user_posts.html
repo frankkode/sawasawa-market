@@ -1,0 +1,58 @@
+{% extends 'blog/base.html' %}
+{% block content  %}
+
+{% include 'blog/navigation.html' %}
+
+
+
+<div class="container">
+<div class="row">
+
+<div class="calling">
+<div class="text-center d-none d-sm-none d-md-none d-lg-block">  
+<!--Unique-->
+<button type="button" class="btn margin-bottom-cat margin-right-cat" aria-hidden="true"><i class="fas fa-car fa-3x green-text"></i><strong> Auto </strong></a>
+
+<!--Pink-->
+<button type="button" class="btn margin-bottom-cat margin-right-cat" aria-hidden="true"><i class="fas fa-city fa-3x pink-text"></i><strong> Commercial </strong></button>
+<!--Indigo-->
+<button type="button" class="btn margin-bottom-cat margin-right-cat" aria-hidden="true"><i class="fas fa-store-alt fa-3x indigo-text"></i><strong> house for sell/rent </strong></button>
+
+<!--Purple-->
+<button type="button" class="btn margin-bottom-cat margin-right-cat" aria-hidden="true"><i class="fas fa-user-graduate fa-3x purple-text"></i><i class="fas fa-user-md fa-3x deep-purple-text"></i><strong> training & jobs</button>
+<button type="button" class="btn margin-bottom-cat" aria-hidden="true"><i class="fab fa-dropbox fa-3x amber-text "></i><strong> other</strong></button>      
+</div>
+</div>
+ <!-- Grid row -->
+    {% for post in posts %}
+<div class="display_posts text-center">
+<div id="wrap" class="columns_4 ">
+	<div id="columns" class="columns_4">
+  <figure>
+<a href="{% url 'post-detail' post.id %}"><img  src="{{ post.image.url }}" alt="image.image-{{post.title}}" class='card-img-top' /></a>
+
+  <div class="spacing-on-detail">
+	<a  href="{% url 'post-detail' post.id %}"><figcaption class="green-text  capitalise text-center text-uppercase">{{ post.title }}</figcaption></a>
+  <h5 class="blue-text "><small>Updated on: {{ post.updated|date:"F d, Y" }}</small></h5><br>
+  
+  <span class="price"><strong>Price:$ {{ post.price }}-</strong></span> <br>
+  <h5 class="blue-text "><small>Posted on: {{ post.date_posted|date:"F d, Y" }}</small></h5>
+  </figure>
+</div>
+</div>
+</div>
+
+{% endfor %}
+</div>
+</div>
+</div>
+
+<!--footer-->
+
+
+
+<div class="django_form_clear">
+{% include 'blog/footer.html' %}
+</div>
+{% endblock content %}
+    

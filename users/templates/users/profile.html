@@ -1,0 +1,65 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content  %}
+{% include 'blog/navigation.html' %}
+<div class="container my-5">
+<div class="row">
+
+  <!--Section: Content-->
+  <section class="team-section text-center dark-grey-text">
+
+    <!-- Section heading -->
+    <h3 class="font-weight-bold pb-2 mb-4">Hello {{ user.username }}</h3>
+    <!-- Section description -->
+    <p class="text-muted w-responsive mx-auto mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam
+      eum porro a pariatur veniam.</p>
+
+    <!-- Grid row -->
+      <div class="container ">
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-lg-6 col-md-6 mb-4">
+        <div class="avatar mx-auto">
+          <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        </div>
+        <h5 class="font-weight-bold mt-4 mb-3 ">{{ user.username }}</h5>
+        <p class="grey-text">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+          adipisci sed quia non numquam modi tempora eius.</p>
+        
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    </div>
+    <!-- Grid row -->
+
+</section>
+
+
+
+
+<form class="register-form-center border border-light p-5" action="#!" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Profile Info</legend>
+  
+    {{ u_form|crispy}}
+    {{ p_form|crispy}}
+  
+        </fieldset>
+    <!-- Sign up button -->
+    <button class="btn btn-info my-4 btn-block" type="submit">UPDATE</button>
+</form>
+
+</div>
+</div>
+
+<div class="django_form_clear">
+{% include 'blog/footer.html' %}
+</div>
+{% endblock %}
+
+
+    

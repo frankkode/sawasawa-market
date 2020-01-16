@@ -1,0 +1,32 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content  %}
+{% include 'blog/navigation.html' %}
+
+
+<div class="container">
+<div class="row">
+<!-- Default form register -->
+<form class="form" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <fieldset class="form-group ">
+    
+    {{ form|crispy }}
+    {{ formset.management_form }}
+    {% for f in formset %}
+      {{ f|crispy }}
+    {% endfor %}
+    </fieldset>
+    
+    {% include 'checkout.html' %}
+</form>
+
+
+</div>
+
+</div>
+
+<div class="django_form_clear_formpost">
+{% include 'blog/footer.html' %}
+</div>
+{% endblock %}

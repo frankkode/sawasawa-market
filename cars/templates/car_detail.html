@@ -1,0 +1,135 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block content %}
+{% include 'blog/navigation.html' %}
+
+
+
+<div class="container my-5">
+<div class="row">
+
+  <!-- Section: Block Content -->
+  <section class="dark-grey-text">
+
+    <h3 class="text-center font-weight-bold mb-4 pb-2">Car Detail</h3>
+    <p class="text-center text-muted w-responsive mx-auto mb-5">{{car.description}} </p>
+<p class="text-muted mb-3">{{ car.date_posted}}</p>
+
+<!--{{ share_string }}-->
+SHARE:
+<a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}">
+<i class="fab fa-facebook-square"></i>
+</a>
+<a href="https://twitter.com/home?status={{share_string}}%20{{ request.build_absolute_uri }}">
+<i class="fab fa-twitter-square"></i>
+</a>
+<a href='https://plus.google.com/share?url={{ request.build_absolute_uri }}'> <i class="fab fa-google-plus-square"></i></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}&title={{ post.title}}&summary={{ share_string}}&source={{ request.build_absolute_uri }}">
+<i class="fab fa-linkedin"></i>
+</a>
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-lg-5 mb-lg-0 mb-5">
+
+        <img class="img-fluid img-thumbnail" src="{{ car.image.url }}" alt="" >
+        <h3 class="text-center mt-3">Contact us</h3>
+        <ul>
+        <li class="d-flex mt-4 ">
+            <span class="fa-li"><i class="fas fa-mobile-alt orange-text accent-1"></i></span>
+            <div>
+              <h5 class="font-weight-bold mb-1">Phone</h5>
+              <p class="text-muted mb-0">{{ car.phone}}</p>
+            </div>
+          </li>
+          <li class="d-flex mt-4 ">
+            <span class="fa-li"><i class="far fa-envelope orange-text accent-1"></i></span>
+            <div>
+              <h5 class="font-weight-bold mb-1">Email</h5>
+              <p class="text-muted mb-0">{{ car.email}}</p>
+            </div>
+          </li>
+          <li class="d-flex mt-4 ">
+            <span class="fa-li"><i class="fas fa-map-marker-alt orange-text accent-1"></i></span>
+            <div>
+              <h5 class="font-weight-bold mb-1">Address</h5>
+              <p class="text-muted mb-0">{{ car.address}}</p>
+            </div>
+          </li>
+          <li class="d-flex mt-4  ">
+            <span class="fa-li"><i class="fas fa-map-pin orange-text accent-1"></i></span>
+            <div>
+              <h5 class="font-weight-bold mb-1">City</h5>
+              <p class="text-muted mb-0">{{ car.city}}</p>
+            </div>
+          </li>
+          <li class="d-flex mt-4 ">
+            <span class="fa-li"><i class="fas fa-globe-africa orange-text accent-1"></i></span>
+            <div>
+              <h5 class="font-weight-bold mb-1 ">Country</h5>
+              <p class="text-muted mb-0">{{ car.country}}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-lg-7">
+
+        <ul class="list-unstyled fa-ul mb-0">
+          <li class="d-flex mt-4 pl-4">
+            <span class="fa-li"><i class="fas fa-book  cyan-text orange-text accent-1"></i></span>
+            <div>
+              <h5 class="font-weight-bold mb-1">Mark</h5>
+              <p class="text-muted">{{ car.modeli}}</p>
+            </div>
+          </li>
+          <li class="d-flex mt-4 pl-4">
+            <span class="fa-li"><i class="fas fa-code red-text orange-text accent-1"></i></span>
+            <div>
+              <h5 class="font-weight-bold mb-1">Fuel</h5>
+              <p class="text-muted">{{ car.fuel}}</p>
+            </div>
+          </li>
+          <li class="d-flex mt-4 pl-4">
+            <span class="fa-li"><i class="far fa-money-bill-alt  deep-purple-text"></i></span>
+            <div>
+              <h5 class="font-weight-bold mb-1">Price</h5>
+              <p class="text-muted mb-0">{{ car.price}}</p>
+            </div>
+          </li>
+          <li class="d-flex mt-4 pl-4">
+            <span class="fa-li"><i class="far fa-calendar-alt orange-text accent-1"></i></span>
+            <div>
+              <h5 class="font-weight-bold mb-1">Year Model</h5>
+              <p class="text-muted mb-0">{{ car.year_model}}</p>
+            </div>
+            <li class="d-flex mt-4 pl-4">
+            <span class="fa-li"><i class="fas fa-dumbbell orange-text accent-1"></i></span>
+            <div>
+              <h5 class="font-weight-bold mb-1">Driver</h5>
+              <p class="text-muted mb-0">{{ car.drive}}</p>
+            </div>
+          
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+    <hr class="my-5">
+
+  </section>
+  <!-- Section: Block Content -->
+
+
+</div>
+</div>
+
+{% include 'blog/footer.html' %}
+{% endblock %}

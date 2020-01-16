@@ -1,0 +1,27 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+{% include 'blog/navigation.html' %}
+<h1 class="text-center">Jobs/ Trainings</h1>
+<div class="container">
+<div class="row">
+{% for jobb in jobbs %}
+    <div class="col-md-4">
+        <div class="card mb-2 rounded z-depth-2">
+            <img class="card-img-top img-thumbnail img-fluid imgs-details" src="{{ jobb.image.url }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ jobb.title }}</h5>
+                <p class="card-text">{{ jobb.description|linebreaks|truncatewords:10 }}</p>
+                <a href="{% url 'jobbs:job_detail' id=jobb.id %}"
+                   class="btn btn-primary">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+{% include 'blog/footer.html' %}
+{% endblock %}
+ 

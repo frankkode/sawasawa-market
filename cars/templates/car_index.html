@@ -1,0 +1,65 @@
+
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block content %}
+{% include 'blog/navigation.html' %}
+
+
+
+<div class="container mt-5">
+
+
+  <!--Section: Content-->
+  <section class="dark-grey-text text-center">
+{% for car in cars %}
+    <!-- Section heading -->
+    <h2 class="font-weight-bold mb-4 pb-2 text-center">Brande New Cars</h2>
+    <!-- Section description -->
+    <p class="text-center mx-auto w-responsive mb-5 ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur veniam.</p>
+
+  	<!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-lg-4 col-md-12 mb-4">
+
+        <!-- Featured image -->
+        <div class="view overlay rounded z-depth-2 mb-4">
+          <img class="card-img-top img-thumbnail img-fluid " src="{{ car.image.url }}">
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+
+        <!-- Category -->
+        <a href="#!" class="pink-text">
+          <h6 class="font-weight-bold mb-3"><i class="fas fa-map pr-2"></i>New</h6>
+        </a>
+        <!-- Post title -->
+        <h4 class="font-weight-bold mb-3"><strong>{{ car.title }}</strong></h4>
+        <!-- Post data -->
+        <p>by <a class="font-weight-bold">{{ car.owner }}</a>, {{ car.date_posted }}</p>
+        <!-- Excerpt -->
+        <p class="dark-grey-text">{{car.description|linebreaks|truncatewords:10}}</p>
+        <!-- Read more button -->
+        <a class="btn btn-pink btn-rounded btn-md"  href="{% url 'cars:car_detail' id=car.id %}">Read more</a>
+        
+
+      </div>
+      <!-- Grid column -->
+
+     
+  
+
+    </div>
+    <!-- Grid row -->
+{% endfor %}
+  </section>
+  <!--Section: Content-->
+
+
+</div>
+
+{% include 'blog/footer.html' %}
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+
+{% block content  %}
+{% include 'blog/navigation.html' %}
+
+
+<div class="container">
+<div class="row">
+<h2 class="col-sm-6 orange-text">
+<strong>You have been loget out! </strong>
+</h2>
+<br>
+        
+<div class="text-muted col-sm-6">
+<button class="btn btn-deep-orange green-text"><a href="{% url 'login' %}" ><strong>Log in here </strong></a></button>
+</div>
+</div>
+</div>
+
+<div class="django_form_clear">
+{% include 'blog/footer.html' %}
+</div>
+{% endblock content %}
