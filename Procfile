@@ -1,1 +1,1 @@
-web: guncorn sawasawa_market.wsgi:application
+web: gunicorn sawasawa_market.wsgi:application
