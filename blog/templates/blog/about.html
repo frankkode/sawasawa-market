@@ -5,79 +5,38 @@
  <div class="container">
   <div class="row ">
     <!--Section: Main features & Quick Start-->
-    <section>
+   <div class="container my-5 z-depth-1">
 
-      <h3 class="h3 text-center mb-5">About Afro Market</h3>
 
-      <!--Grid row-->
-      <div class="row wow fadeIn">
+  <!--Section: Content-->
+  <section class="dark-grey-text">
 
-        <!--Grid column-->
-        <div class="col-lg-6 col-md-12 px-4">
+    <div class="row pr-lg-5">
+      <div class="col-md-7 mb-4">
 
-          <!--First row-->
-          <div class="row">
-            <div class="col-1 mr-3">
-              <i class="fas fa-code fa-2x indigo-text"></i>
-            </div>
-            <div class="col-10">
-              <h5 class="feature-title">Bootstrap 4</h5>
-              <p class="grey-text">Thanks to MDB you can take advantage of all feature of newest Bootstrap 4.</p>
-            </div>
-          </div>
-          <!--/First row-->
-
-          <div style="height:30px"></div>
-
-          <!--Second row-->
-          <div class="row">
-            <div class="col-1 mr-3">
-              <i class="fas fa-book fa-2x blue-text"></i>
-            </div>
-            <div class="col-10">
-              <h5 class="feature-title">Detailed documentation</h5>
-              <p class="grey-text">We give you detailed user-friendly documentation at your disposal. It will help you
-                to implement your ideas
-                easily.
-              </p>
-            </div>
-          </div>
-          <!--/Second row-->
-
-          <div style="height:30px"></div>
-
-          <!--Third row-->
-          <div class="row">
-            <div class="col-1 mr-3">
-              <i class="fas fa-graduation-cap fa-2x cyan-text"></i>
-            </div>
-            <div class="col-10">
-              <h5 class="feature-title">Lots of tutorials</h5>
-              <p class="grey-text">We care about the development of our users. We have prepared numerous tutorials,
-                which allow you to learn
-                how to use MDB as well as other technologies.</p>
-            </div>
-          </div>
-          <!--/Third row-->
-
+        <div class="view">
+          <img src="https://mdbootstrap.com/img/illustrations/graphics(4).png" class="img-fluid" alt="smaple image">
         </div>
-        <!--/Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-6 col-md-12">
-
-          <p class="h5 text-center mb-4">Watch our "5 min Quick Start" tutorial</p>
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cXTThxoywNQ" allowfullscreen></iframe>
-          </div>
-        </div>
-        <!--/Grid column-->
 
       </div>
-      <!--/Grid row-->
+      <div class="col-md-5 d-flex align-items-center">
+        <div>
+          
+          <h3 class="font-weight-bold mb-4">SAWASAWA MARKET</h3>
 
-    </section>
+        	<p>Sawasawa Market is an online market where you can sell easily your products on a reasonable price, we work with companies all over the world helping in advertising their properties and cars always if you want to work with us, you can contact us here</p>
 
+        	<a href="{% url 'blog-contact' %}"><button  type="button" class="btn btn-orange btn-rounded mx-0">Contact Us</button></a>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!--Section: Content-->
+
+
+</div>
      <hr class="my-5">
 
       <hr class="my-5">
@@ -114,6 +73,156 @@
     </div>
     </div>
 
+
+
+<div class="container z-depth-1 my-5 py-5 px-4 px-lg-0">
+
+  <!-- Section -->
+  <section>
+    
+    <style>
+      .timeline {
+        position: relative;
+        list-style: none;
+        padding: 1rem 0;
+        margin: 0;
+      }
+
+      .timeline::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        margin-left: -1px;
+        background-color: #50a1ff;
+      }
+
+      .timeline-element {
+        position: relative;
+        width: 50%;
+        padding: 1rem 0;
+        padding-right: 2.5rem;
+        text-align: right;
+      }
+
+      .timeline-element::before {
+        content: '';
+        position: absolute;
+        right: -8px;
+        top: 1.35rem;
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 2px solid #50a1ff;
+        background-color: #fff;
+      }
+
+      .timeline-element:nth-child(even)::before {
+        right: auto;
+        left: -8px;
+      }
+
+      .timeline-element:nth-child(even) {
+        margin-left: 50%;
+        padding-left: 2.5rem;
+        padding-right: 0;
+        text-align: left;
+      }
+
+      @media (max-width: 767.98px) {
+        .timeline::before {
+          left: 8px;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .timeline-element {
+          width: 100%;
+          text-align: left;
+          padding-left: 2.5rem;
+          padding-right: 0;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .timeline-element::before {
+          top: 1.25rem;
+          left: 1px;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .timeline-element:nth-child(even) {
+          margin-left: 0rem;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .timeline-element {
+          width: 100%;
+          text-align: left;
+          padding-left: 2.5rem;
+          padding-right: 0;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .timeline-element:nth-child(even)::before {
+          left: 1px;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .timeline-element::before {
+          top: 1.25rem;
+        }
+      }
+    </style>
+    
+    <h3 class="font-weight-bold text-center dark-grey-text pb-2">How to sell your product</h3>
+    <hr class="w-header my-4">
+    <p class="lead text-center text-muted pt-2 mb-5">This is step by step on how to use our ONLINE MARKET</p>
+    
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+
+        <ol class="timeline">
+          <li class="timeline-element">
+            <h5 class="font-weight-bold dark-grey-text mb-3">Register</h5>
+            <p class="grey-text font-small"><time datetime="2017-02-08">step 1</time></p>
+            <p class="text-muted">Register using your username,email and password to be able to sell your products.</p>
+          </li>
+
+          <li class="timeline-element">
+            <h5 class="font-weight-bold dark-grey-text mb-3">Upload 5 pictures</h5>
+            <p class="grey-text font-small"><time datetime="2017-08-17">step 2</time></p>
+            <p></p>
+            <p class="text-muted">chose clear and correct pictures of your products, make sure that they are in .png, .jpg, .jpeg format,upload your picture and fill all fields to give all information regarding your products.</p>
+          </li>
+
+          <li class="timeline-element">
+            <h5 class="font-weight-bold dark-grey-text mb-3">Payment</h5>
+            <p class="grey-text font-small"><time datetime="2018-03-26">step 3</time></p>
+            <p class="text-muted">fill up stripe field your card number,expired month and year(just two characters),CCV and your address code (5 numbers) and then pay only 30 USD.(NB: we are not the one who correct your information on card instead is stripe Payment to make sure that you are protected by all means)</p>
+          </li>
+
+          <li class="timeline-element">
+            <h5 class="font-weight-bold dark-grey-text mb-3">Finaly</h5>
+            <p class="grey-text font-small"><time datetime="2018-04-14">step 4</time></p>
+            <p class="text-muted">go to main page and see if your product are well detailed ,if not click on your product and edit, for more information contact us</p>
+          </li>
+        </ol>
+
+      </div>
+    </div>
+    
+  </section>
+  <!-- Section -->
+  
+</div>
     {% include 'blog/footer.html' %}
 {% endblock content %}
 

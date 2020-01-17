@@ -115,7 +115,7 @@ def PostCreateView(request):
                 except Exception as e:
                     break
             messages.success(request, "Post has been successfully created.")
-            return render(request, 'blog/user_posts.html')
+            return render(request, 'blog/home.html')
     else:
         form = PostCreateForm()
         formset = ImageFormset(queryset=Images.objects.none())

@@ -111,9 +111,31 @@ profile image .account-img {
     margin-top: 600px;
 }
 
+
+
+html,
+body {
+    height: 100%;
+}
+
+#wrap {
+    min-height: 100%;
+}
+
+#main {
+    overflow: auto;
+    padding-bottom: 150px;
+    /* this needs to be bigger than footer height*/
+}
+
 .django_form_clear_formpost {
-    margin-bottom: -15px;
-    margin-top: 2000px;
+
+    position: relative;
+    margin-top: -5px;
+    /* negative value of footer height */
+    height: 150px;
+    clear: both;
+    padding-top: 20px;
 }
 
 

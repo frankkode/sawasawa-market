@@ -16,8 +16,11 @@
         {% endfor %}
     </small>
     <p>{{ post.body | slice:":400" }}...<a href="{% url 'blogo_detail' post.pk%}"><small>contine reading</small></a></p>
+    <hr>
     {% endfor %}
+    
 </div>
+
 <div class="django_form_clear">
 {% include 'blog/footer.html' %}
 </div>
