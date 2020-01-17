@@ -147,11 +147,6 @@ card.addEventListener('change', function (event) {
 
 
 {% block content  %}
-
-<div class="container">
-
-<div class="row">
-<div class="wrapper">
 <div>
 <h3 class="panel-title ml-4" >Payment Details</h3>
 </div>
@@ -162,7 +157,9 @@ card.addEventListener('change', function (event) {
 
 
 
-<form class="form" action="." method="POST" id="payment-form"> {% csrf_token %}
+<form class="form" action="." method="POST" id="payment-form">
+
+ {% csrf_token %}
     <div class="form-row">
     <label for="card-element">
     </label>
@@ -178,20 +175,21 @@ card.addEventListener('change', function (event) {
     <div style="width: 30em; height: 2em; letter-spacing: 0em" id="card-errors" role="alert"></div>
     </div>
 
-    <button class="btn btn-success center_button" >Submit Payment</button>
+    <button class="btn btn-success center_button" >Payment 30 USD</button>
 </form>
-</div>
-</div>
+
 <div id="stripe-token-handler" class="is-hidden">Success! Got token: <span class="token"></span></div>
 
 
 <!-- CREDIT CARD FORM STARTS HERE -->
 
-</div>
+
 
 <iframe frameborder="0" allowtransparency="true" scrolling="no" name="__privateStripeController1" allowpaymentrequest="true" src="https://js.stripe.com/v3/controller-aa9903ff186968008fb3408d381a22d4.html#apiKey=pk_test_4NEzRvjxFh3Ldm9MPzXMBdli00V3s2OLlD&amp;stripeJsId=651bf556-8c88-4324-95e2-af79264a0356&amp;origin=https%3A%2F%2Fstripe.com&amp;referrer=https%3A%2F%2Fstripe.com%2Fdocs%2Fstripe-js&amp;controllerId=__privateStripeController1" aria-hidden="true" tabindex="-1" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe>
 
   <iframe frameborder="0" allowtransparency="true" scrolling="no" name="__privateStripeMetricsController0" allowpaymentrequest="true" src="https://js.stripe.com/v2/m/outer.html#url=https%3A%2F%2Fstripe.com%2Fdocs%2Fstripe-js&amp;title=&amp;referrer=&amp;muid=61dfdad9-a74d-43a1-81cb-16c5366aadf7&amp;sid=3bcaa28b-2b65-4de9-8b20-f48e243c2510&amp;preview=true" aria-hidden="true" tabindex="-1" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe>
+
+
 
 {% endblock content  %}
 

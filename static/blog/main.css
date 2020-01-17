@@ -4,12 +4,6 @@
     }
 }
 
-/*logo*/
-#logo-image {
-    width: 10px;
-    height: 10px;
-    display: flex;
-}
 
 /* TEMPLATE STYLES */
 
@@ -118,8 +112,8 @@ profile image .account-img {
 }
 
 .django_form_clear_formpost {
-    margin-bottom: 0%;
-    margin-top: 1750px;
+    margin-bottom: -15px;
+    margin-top: 2000px;
 }
 
 

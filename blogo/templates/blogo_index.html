@@ -15,7 +15,7 @@
         </a>&nbsp;
         {% endfor %}
     </small>
-    <p>{{ post.body | slice:":400" }}...</p>
+    <p>{{ post.body | slice:":400" }}...<a href="{% url 'blogo_detail' post.pk%}"><small>contine reading</small></a></p>
     {% endfor %}
 </div>
 <div class="django_form_clear">
