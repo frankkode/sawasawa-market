@@ -6,5 +6,5 @@ urlpatterns = [
     path('charge/', views.charge, name='charge'), # new
     #path('', views.HomePageView.as_view(), name='home'),
     #path('checkout/', checkout_views.checkout, name='checkout'),
-    path('checkout/', views.HomePageView.as_view(), name='checkout'),
+    path('checkout/', views.CheckoutPageView.as_view(), name='checkout'),
 ]

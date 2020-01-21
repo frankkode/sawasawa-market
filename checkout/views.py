@@ -9,7 +9,7 @@ from django import forms
 stripe.api_key = settings.STRIPE_SECRET_KEY # new
 
 
-class HomePageView(TemplateView):
+class CheckoutPageView(TemplateView):
     template_name = 'checkout.html'
 
     def get_context_data(self, **kwargs):
