@@ -1,43 +1,38 @@
+import stripe # new
+
 from django.conf import settings
-from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
-from django.contrib.auth.decorators import login_required
-import stripe
-# Create your views here.
+from django.views.generic.base import TemplateView
+from django.shortcuts import render # new
+from django import forms
 
-stripe.api_key = settings.STRIPE_SECRET_KEY
+stripe.api_key = settings.STRIPE_SECRET_KEY # new
 
 
+class HomePageView(TemplateView):
+    template_name = 'checkout.html'
 
-@login_required
-def checkout(request):
-    publishKey = settings.STRIPE_PUBLISHABLE_KEY
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['key'] = settings.STRIPE_PUBLISHABLE_KEY
+        return context
+
+
+def charge(request): # new
     if request.method == 'POST':
-        token = request.POST['stripeToken']
-        try:
-            charge = stripe.Charge.create(
-                amount=1000,
-                currency='sek',
-                source=token,
-                description='Example charge',
-                
-                
-                )
-        except stripe.error.CardError as e:
-            message.info(request, "Your card has been declined.")
+        charge = stripe.Charge.create(
+            amount=2000,
+            currency='usd',
+            description='A Django charge',
+            source=request.POST['stripeToken']
+        )
+        return render(request, 'charge.html')
         
-    context = {'publishKey':publishKey}
-    templete = 'checkout.html'
-    return render(request, templete, context)
-    
-
-def pay_success(request, **kwargs):
-    return HttpResponseRedirect('/blog-success/')
-    #return render('blog/pay_success.html')
 
 
 
 
 
 
-    
+
+

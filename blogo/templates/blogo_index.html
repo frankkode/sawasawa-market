@@ -2,7 +2,8 @@
 {% block content %}
 {% include 'blog/navigation.html' %}
 <div class="col-md-8 offset-md-2">
-    <h1>Blog Index</h1>
+    <h3  class="text-center margin-bottom-cat margin-right-cat orange-text"><i class="far fa-newspaper fa-x indigo-text mt-2"></i> BLOG </h3>
+
     <hr>
     {% for post in posts %}
     <h2><a href="{% url 'blogo_detail' post.pk%}">{{ post.title }}</a></h2>

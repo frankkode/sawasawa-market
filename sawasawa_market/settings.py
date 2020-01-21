@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
-#import env
+import env
 import dj_database_url
 #import django_heroku
 
@@ -35,7 +35,6 @@ ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOSTS', '127.0.0.1')]
 
 INSTALLED_APPS = [
     'blog.apps.BlogConfig',
-    'stripe', 
     'blogo.apps.BlogoConfig',
     'jobbs.apps.JobbsConfig',
     'cars.apps.CarsConfig',
@@ -74,7 +73,7 @@ ROOT_URLCONF = 'sawasawa_market.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -178,13 +177,13 @@ LOGIN_URL = 'login'
 
 #stripe settings
 
-if DEBUG:
-    STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')
-    STRIPE_SECRET_KEY  = os.environ.get('STRIPE_SECRET_KEY')
+#if DEBUG:
+STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')
+STRIPE_SECRET_KEY  = os.environ.get('STRIPE_SECRET_KEY')
     
-else:
-    STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE')
-    STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET')
+#else:
+    #STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE')
+    #STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET')
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

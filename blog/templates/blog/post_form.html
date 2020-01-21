@@ -1,12 +1,6 @@
 {% extends 'blog/base.html' %}
 {% load crispy_forms_tags %}
 {% block content  %}
-{% include 'blog/navigation.html' %}
-
-
-<div class="container">
-<div class="row">
-
 <!-- Default form register -->
 <form class="form col-lg-8 col-md-6 col-sm-12" method="post" enctype="multipart/form-data">
     {% csrf_token %}
@@ -18,16 +12,14 @@
       {{ f|crispy }}
     {% endfor %}
     </fieldset>
-    
-    {% include 'checkout.html' %}
+    <div class="form-group">
+      <button class="btn btn-outline-info" type="submit">Post</button>
+    </div>
+   
 </form>
 
 
-</div>
-</div>
 
 
-<div class="django_form_clear_formpost">
-{% include 'blog/footer.html' %}
-</div>
+
 {% endblock %}

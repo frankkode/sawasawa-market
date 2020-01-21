@@ -26,12 +26,13 @@ urlpatterns = [
     path('post/<int:id>/update/', views.PostUpdateView, name='post-update'),
     path('post/<int:id>/delete/', views.PostDeleteView, name='post-delete'),
     path('about/', views.about, name='blog-about'),
-    path('pay_success/', views.pay_success, name='blog-pay_success'),
+    #path('pay_success/', views.pay_success, name='blog-pay_success'),
     path('footer/', views.footer, name='blog-footer'),
     path('navigation/', views.navigation, name='blog-navigation'),
     path('success/', views.Success, name='blog-success'),
     path('contact/', views.Contact, name='blog-contact'),
     path('base/', views.base, name='blog-base'),
+    
     
     
 

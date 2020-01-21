@@ -173,20 +173,14 @@ def PostUpdateView(request, id):
     
 
 def PostDeleteView(request, id):
+    
+    obj = get_object_or_404(Post, id=id)
+    obj.delete()
+        
     query = Post.objects.filter(id=id)
-    #obj = get_object_or_404(Post, id=id)
-    template_name = 'blog/post_delete.html'
-    if request.method == "POST":
-        #obj.delete()
-        query.delete()
+    query.delete()
     messages.warning(request, 'post has been successfully deleted!')
-    context = {'query':query}
-    return render(request, template_name, context)
     return redirect('blog-home')
-    #query = Post.objects.filter(id=id)
-    #query.delete()
-    #messages.warning(request, 'post has been successfully deleted!')
-    #return redirect('blog-home')
 
     def test_func(self):
         post = self.get_object()
@@ -239,8 +233,12 @@ def Contact(request):
 def Success(request):
     return render(request, 'blog/success.html')
 
-def pay_success(request, **kwargs):
-    return render(request, 'blog/pay_success.html')
+#def charge(request):
+  #  return render(request, 'blog/charge.html')
+
+
+#def pay_success(request, **kwargs):
+   # return render(request, 'blog/pay_success.html')
 
     
 def footer(request):

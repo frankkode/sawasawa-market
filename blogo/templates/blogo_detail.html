@@ -1,6 +1,7 @@
 {% extends "blog/base.html" %}
 {% block content %}
 {% include 'blog/navigation.html' %}
+<a class="btn  font-weight-bold success-lighter-hover" href="{% url 'blogo_index' %}"><i class="fas fa-arrow-left"></i><i class="far fa-newspaper fa-x indigo-text"></i> BLOG</a>
 <div class="col-md-8 offset-md-2">
     <h1>{{ post.title }}</h1>
     <small>

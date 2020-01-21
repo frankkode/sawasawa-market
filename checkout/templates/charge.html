@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content  %}
+
+{% include 'blog/navigation.html' %}
+<div class="container">
+<div class=" row">
+<div class="text-center">
+<h2>Thanks, you paid <strong>$20.00</strong>!</h2>
+</div>
+
+{% include 'blog/post_form.html'  %}
+
+</div>
+</div>
+<div class="django_form_clear">
+{% include 'blog/footer.html' %}
+</div>
+{% endblock content  %}

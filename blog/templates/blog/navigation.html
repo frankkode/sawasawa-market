@@ -68,8 +68,9 @@
   {% if user.is_authenticated %}
   <a class="nav-item nav-link font-weight-bold success-lighter-hover" href="{% url 'profile' %}">Profile</a>
   <a class="nav-item nav-link  font-weight-bold success-lighter-hover" href="{% url 'post-create' %}">Sell item</a>
+  <a class="nav-item nav-link  font-weight-bold success-lighter-hover" href="{% url 'checkout' %}">payment</a>
   <a class="nav-item nav-link font-weight-bold success-lighter-hover" href="{% url 'logout' %}">Log Out</a>
- 
+
 
   {% else %}
         <a class="nav-item nav-link font-weight-bold success-lighter-hover " href="{% url 'login' %}">Log In</a>
