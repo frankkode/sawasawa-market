@@ -32,7 +32,7 @@
      {% for p in post.images_set.all %}
     {% if p.image %}
       <div class="col-md-3 text-center ">
-      <a href="#">
+      <a href="#" class="imgs-details">
         <img src="{{ p.image.url }}" alt="" class="img-thumbnail imgs-details" onclick="myFunction(this);">
      </a>
       </div>
