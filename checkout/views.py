@@ -3,7 +3,7 @@ import stripe # new
 from django.conf import settings
 from django.http import HttpResponseRedirect
 from django.views.generic.base import TemplateView
-from django.shortcuts import render # new
+from django.shortcuts import render, redirect # new
 from django import forms
 
 stripe.api_key = settings.STRIPE_SECRET_KEY # new
@@ -26,12 +26,12 @@ def charge(request): # new
             description='A Django charge',
             source=request.POST['stripeToken']
         )
-        return render(request, 'charge.html')
+
+    #return render(request, 'blog/post_form.html')
+    return render(request, 'charge.html')
+    
+    
         
-
-
-
-
 
 
 
