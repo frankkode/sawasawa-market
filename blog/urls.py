@@ -32,10 +32,6 @@ urlpatterns = [
     path('success/', views.Success, name='blog-success'),
     path('contact/', views.Contact, name='blog-contact'),
     path('base/', views.base, name='blog-base'),
-    
-    
-    
-
 ]
 
 

@@ -35,7 +35,7 @@ def PostListView(request):
         'images': Images.objects.all()
     }
     model = Post
-    template_name = 'blog/home.html'  # <app>/<model>_<viewtype>.html
+    template_name = 'blog/home.html'  
     context_object_name = 'posts'
     post_list = Post.objects.all()
     paginator = Paginator(post_list, 8)
@@ -77,7 +77,7 @@ def UserPostListView(request, username):
         'posts': Post.objects.filter(author__username=username),
     }
     model = Post
-    template_name = 'blog/user_posts.html'  # <app>/<model>_<viewtype>.html
+    template_name = 'blog/user_posts.html'  
     context_object_name = 'posts'
 
     def get_queryset(self):
@@ -188,10 +188,6 @@ def PostDeleteView(request, id):
             return True
         return False
 
-    
-
-
-
 def about(request):
     return render(request, 'blog/about.html', {'title': 'About'})
 
@@ -229,18 +225,11 @@ def Contact(request):
         return redirect('blog-success')
     return render(request, 'blog/contact.html', {'form':Contact_Form })
 
-# redirect success page
+
 def Success(request):
     return render(request, 'blog/success.html')
 
-#def charge(request):
-  #  return render(request, 'blog/charge.html')
 
-
-#def pay_success(request, **kwargs):
-   # return render(request, 'blog/pay_success.html')
-
-    
 def footer(request):
     return render(request, 'blog/footer.html', {'title': 'footer'})
 

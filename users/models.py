@@ -9,16 +9,11 @@ import stripe
 # Create your views here.
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
-
-
-
-
-
 class Profile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(max_length=120, blank=True, null=True)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
-
+    #purchased_slots = models.IntegerField()
     
     def __unicode__(self):
         return self.name

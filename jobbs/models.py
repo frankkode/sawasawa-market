@@ -14,10 +14,6 @@ class Job(models.Model):
     city = models.CharField(help_text='City', max_length=40)
     country = models.CharField(help_text='Country', max_length=30)
     date_posted = models.DateTimeField(default=timezone.now)
-    
-    
-   # def get_absolute_url(self):
-       # return reverse('jobbs:job_detail', args=[self.jobb_id])
 
 
     class Meta:

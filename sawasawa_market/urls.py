@@ -33,7 +33,6 @@ urlpatterns = [
     path('register/', user_views.register, name='register'),
     path('profile/', user_views.profile, name='profile'),
     path('', include('checkout.urls')),
-    #path('checkout/', checkout_views.checkout, name='checkout'),
     path('', include('blog.urls')),
     path('blogo/', include('blogo.urls')),
     url(r'^jobbs/', include('jobbs.urls')),

@@ -10,7 +10,7 @@ def house_index(request):
     houses = House.objects.all()
     context = {'houses': houses}
 
-    template_name = 'house_index.html'  # <app>/<model>_<viewtype>.html
+    template_name = 'house_index.html'  
     context_object_name = 'houses'
     return render(request, 'house_index.html', context)
 

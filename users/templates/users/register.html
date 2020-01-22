@@ -2,19 +2,12 @@
 {% load crispy_forms_tags %}
 {% block content  %}
 {% include 'blog/navigation.html' %}
-
-
 <div class="container">
-<div class="row">
-
-   
-    
+<div class="row">  
 <!-- Default form register -->
 <form class="register-form-center text-center border border-light p-5" action="#!" method="POST">
     {% csrf_token %}
     <p class="h4 mb-4">Sign up</p>
-
-    
     <fieldset class="form-group ">
     {{ form|crispy }}
     </fieldset>
@@ -26,8 +19,6 @@
 
     <!-- Sign up button -->
     <button class="btn btn-info my-4 btn-block" type="submit">Sign Up</button>
-
-    
     <!-- Terms of service -->
     <p>By clicking
         <em>Sign up</em> you agree to our
@@ -39,7 +30,7 @@
 </div>
 </div>
 <br>
-<div class="django_form_clear">
+<div class="django_form_clear_formpost">
 {% include 'blog/footer.html' %}
 </div>
 
