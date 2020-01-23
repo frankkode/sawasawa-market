@@ -28,10 +28,7 @@
 <div id="wrap" class="columns_4">
 	<div id="columns" class="columns_4">
   <figure>
-
-<a href="{% url 'post-detail' post.id %}"><img  src="{{ post.image.url }}" alt="image.image-{{post.title}}" class='card-img-top'/></a>
-
-  
+<a href="{% url 'post-detail' post.id %}"><img  src="{{ post.image.url }}" alt="image.image-{{post.title}}" class='card-img-top text-shadow'/></a>
   <div class="spacing-on-detail text-center">
 	<span><a  href="{% url 'post-detail' post.id %}"><figcaption class="green-text  capitalise text-center text-uppercase">{{ post.title }}</figcaption></a></span><br>
   <span><a href="{% url 'user-posts' post.author.username %}"><figcaption class="orange-text  text-capitalize">Seller: {{ post.author }}</figcaption></a></span><br>
@@ -54,11 +51,11 @@
         <!--Grid column-->
         <div class="col-xl-6 col-md-8">
 
-          <h3 class="font-weight-bold">Sell your house, Car...</h3>
+          <h3 class="font-weight-bold orange-text">Sell your house, Car...</h3>
 
           <p class="text-muted">At SAWASAWA-Market we are known online market with millions of buyers everyday, selling with us you never regret</p>
 
-          <a class="btn btn-info btn-md ml-0 mb-5" href="#" role="button">Sell Now<i class="fa fa-magic ml-2"></i></a>
+          <a class="btn btn-info btn-md ml-0 mb-5" href="{% url 'post-create' %}" role="button">Sell Now</a>
 
           <p class="mb-4 font-weight-bold">Trusted by 1 000 000 + cusomers &amp; Real estates</p>
 

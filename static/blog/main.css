@@ -146,8 +146,13 @@ body {
 
 body {
     background: url(//subtlepatterns.com/patterns/scribble_light.png);
-    font-family: Calluna, Arial, sans-serif;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 48px;
     min-height: 100%;
+}
+
+.text-shadow {
+    text-shadow: 4px 4px 4px #aaa;
 }
 
 #wrap {

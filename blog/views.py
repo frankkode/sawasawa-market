@@ -96,7 +96,7 @@ def PostDetailView(request, id):
     context_object_name = 'posts'
     return render(request, 'blog/post_detail.html', context)
 
-
+@login_required
 def PostCreateView(request):
     ImageFormset = modelformset_factory(Images, fields=('image',), extra=4)
     if request.method == 'POST':

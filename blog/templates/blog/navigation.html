@@ -1,6 +1,4 @@
 
-
-
 {% extends 'blog/base.html' %}
 {% load static %}
 {% block content  %}
@@ -17,22 +15,22 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item ">
-            <a class="nav-link font-weight-bold success-lighter-hover" href="{% url 'blog-home' %}">Home </a>
+            <a class="nav-link font-weight-bold success-lighter-hover text-shadow" href="{% url 'blog-home' %}">Home </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link font-weight-bold success-lighter-hover" href="{% url 'blog-about' %}">About us</a>
+            <a class="nav-link font-weight-bold success-lighter-hover text-shadow" href="{% url 'blog-about' %}">About us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link font-weight-bold success-lighter-hover" href="{% url 'blogo_index' %}">Blog</a>
+            <a class="nav-link font-weight-bold success-lighter-hover text-shadow" href="{% url 'blogo_index' %}">Blog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link font-weight-bold success-lighter-hover" href="{% url 'jobbs:job_index' %}">Jobs</a>
+            <a class="nav-link font-weight-bold success-lighter-hover text-shadow" href="{% url 'jobbs:job_index' %}">Jobs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link font-weight-bold success-lighter-hover" href="{% url 'blog-contact' %}">Contact</a>
+            <a class="nav-link font-weight-bold success-lighter-hover text-shadow" href="{% url 'blog-contact' %}">Contact</a>
           </li>
           <li class="nav-item btn-group">
-            <a class="nav-link dropdown-toggle font-weight-bold success-lighter-hover" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+            <a class="nav-link dropdown-toggle font-weight-bold success-lighter-hover text-shadow" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">Properties
             </a>
             <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
@@ -43,7 +41,7 @@
             </div>
           </li>
            <li class="nav-item btn-group ">
-            <a class="nav-link dropdown-toggle font-weight-bold success-lighter-hover" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+            <a class="nav-link dropdown-toggle font-weight-bold success-lighter-hover text-shadow" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">Automobile
             </a>
             <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
@@ -63,17 +61,17 @@
   
   <div class="navbar-nav float-right">
   {% if user.is_authenticated %}
-  <a class="nav-item nav-link font-weight-bold success-lighter-hover" href="{% url 'profile' %}">Profile</a>
-  <a class="nav-item nav-link  font-weight-bold success-lighter-hover" href="{% url 'post-create' %}">Sell</a>
-  <a class="nav-item nav-link  font-weight-bold success-lighter-hover" href="{% url 'checkout' %}">Donate</a>
-  <a class="nav-item nav-link font-weight-bold success-lighter-hover" href="{% url 'logout' %}">Log Out</a>
+  <a class="nav-item nav-link font-weight-bold success-lighter-hover text-shadow" href="{% url 'profile' %}">Profile</a>
+  <a class="nav-item nav-link  font-weight-bold success-lighter-hover text-shadow" href="{% url 'post-create' %}">Sell</a>
+  <a class="nav-item nav-link  font-weight-bold success-lighter-hover text-shadow" href="{% url 'checkout' %}">Donate</a>
+  <a class="nav-item nav-link font-weight-bold success-lighter-hover text-shadow" href="{% url 'logout' %}">Log Out</a>
 
 
   {% else %}
-        <a class="nav-item nav-link font-weight-bold success-lighter-hover " href="{% url 'login' %}">Log In</a>
-        <a class="nav-item nav-link font-weight-bold success-lighter-hover" href="{% url 'register' %}">Register</a>
-        <a class="nav-item nav-link  font-weight-bold success-lighter-hover" href="{% url 'checkout' %}">Donate</a>
-          <a class="nav-item nav-link font-weight-bold success-lighter-hover " href="{% url 'login' %}">Sell</a>
+        <a class="nav-item nav-link font-weight-bold success-lighter-hover  text-shadow" href="{% url 'login' %}">Log In</a>
+        <a class="nav-item nav-link font-weight-bold success-lighter-hover text-shadow" href="{% url 'register' %}">Register</a>
+        <a class="nav-item nav-link  font-weight-bold success-lighter-hover text-shadow" href="{% url 'checkout' %}">Donate</a>
+          <a class="nav-item nav-link font-weight-bold success-lighter-hover  text-shadow" href="{% url 'login' %}">Sell</a>
   {% endif %}
   </div>
       </div>
