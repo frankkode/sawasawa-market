@@ -63,7 +63,7 @@ and:[Pinterest](https://www.pinterest.se/)
 
 ### Profile
 
-![Wireframe / Site Diagram](static/images/profile.png "contact us")
+![Wireframe / Site Diagram](static/img/profile.png "contact us")
 
 ### Post detail
 
@@ -79,7 +79,7 @@ and:[Pinterest](https://www.pinterest.se/)
 
 ### About us
 
-![Wireframe / Site Diagram](static/img/about-us.png "about us")
+![Wireframe / Site Diagram](static/img/abour-us.png "about us")
 
 ### Phone
 
@@ -87,7 +87,7 @@ and:[Pinterest](https://www.pinterest.se/)
 
 ### Database schema
 
-![Wireframe / Site Diagram](static/img/database-schema.png "data-base schema")
+![Wireframe / Site Diagram](static/img/data-base.png "data-base schema")
 
 ## Features
 
@@ -303,10 +303,6 @@ EMAIL_HOST_PASSWORD | `<your_host_password>`
 9.In the "Manual Deployment" section of this page, make sure that the master branch is selected and then click "Deploy Branch".
 
 10.The site is now successfully deployed.
-
-## Content
-
-- www.beadinggem.com for post contents
 
 ## Acknowledgements
 
