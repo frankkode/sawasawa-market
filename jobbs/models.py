@@ -1,14 +1,15 @@
-
 from django.db import models
 import datetime
 from django.utils import timezone
 from django.urls import reverse
 
+
 class Job(models.Model):
     title = models.CharField(max_length=250)
     description = models.TextField()
     technology = models.CharField(max_length=20)
-    image = models.ImageField(default='default.jpg', upload_to='image_jobbs', blank=True, null=True)
+    image = models.ImageField(
+        default='default.jpg', upload_to='image_jobbs', blank=True, null=True)
     phone = models.CharField(blank=True, max_length=15)
     address = models.CharField(help_text='Address', max_length=60)
     city = models.CharField(help_text='City', max_length=40)
@@ -16,10 +17,11 @@ class Job(models.Model):
     date_posted = models.DateTimeField(default=timezone.now)
 
 
-    class Meta:
-        ordering = ['-id']
+class Meta:
+    ordering = ['-id']
 
-    def __str__(self):
-            return self.title
+
+def __str__(self):
+        return self.title
 
     

@@ -3,13 +3,16 @@ import datetime
 from django.utils import timezone
 
 # Create your models here.
+
+
 class House(models.Model):
     title = models.CharField(max_length=250)
     description = models.TextField()
     room = models.CharField(max_length=20)
     area = models.CharField(max_length=20)
     price = models.IntegerField()
-    image = models.ImageField(default='default.jpg', upload_to='image_jobbs', blank=True, null=True)
+    image = models.ImageField(
+        default='default.jpg', upload_to='image_jobbs', blank=True, null=True)
     phone = models.CharField(blank=True, max_length=15)
     address = models.CharField(help_text='Address', max_length=60)
     city = models.CharField(help_text='City', max_length=40)

@@ -10,7 +10,6 @@ from django.dispatch import receiver
 from django.db.models.signals import pre_delete
 
 
-
 class Post(models.Model):
     phone = models.CharField(blank=True, max_length=15)
     address = models.CharField(help_text='Address', max_length=60)
@@ -23,7 +22,8 @@ class Post(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    image = models.ImageField(default='default.jpg', upload_to='image_main_post')
+    image = models.ImageField(
+        default='default.jpg', upload_to='image_main_post')
 
 
     class Meta:
@@ -33,22 +33,17 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse('post-detail', kwargs={'id': self.id})
 
+
     def __str__(self):
             return str(self.title)
 
 
-
 class Images(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, default=None)
-    image = models.ImageField(default='default.jpg', upload_to='image_post', blank=True, null=True)
+    image = models.ImageField(
+        default='default.jpg', upload_to='image_post', blank=True, null=True)
     
 
     def __str__(self):
-        return str(self.post.id)
+            return str(self.post.id)
 
-
-
-    
-
-
-    

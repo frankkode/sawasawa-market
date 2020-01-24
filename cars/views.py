@@ -6,8 +6,6 @@ from django.http import HttpResponse
 from .models import Car
 
 
-
-
 # Create your views here.
 def car_index(request):
     cars = Car.objects.all()
@@ -16,6 +14,7 @@ def car_index(request):
     template_name = 'car_index.html'  # <app>/<model>_<viewtype>.html
     context_object_name = 'cars'
     return render(request, 'car_index.html', context)
+
 
 def car_detail(request, id):
     car = get_object_or_404(Car, id=id)

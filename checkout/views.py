@@ -1,13 +1,13 @@
-import stripe # new
+import stripe  # new
 
 from django.conf import settings
 from django.http import HttpResponseRedirect
 from django.views.generic.base import TemplateView
-from django.shortcuts import render, redirect # new
+from django.shortcuts import render, redirect  # new
 from django.contrib import messages
 from django import forms
 
-stripe.api_key = settings.STRIPE_SECRET_KEY # new
+stripe.api_key = settings.STRIPE_SECRET_KEY  # new
 
 
 class CheckoutPageView(TemplateView):
@@ -19,7 +19,7 @@ class CheckoutPageView(TemplateView):
         return context
 
 
-def charge(request): # new
+def charge(request):  # new
     if request.method == 'POST':
         charge = stripe.Charge.create(
             amount=2000,
@@ -28,7 +28,7 @@ def charge(request): # new
             source=request.POST['stripeToken']
         )
     return render(request, 'charge.html')
-    #return render(request, 'blog/post_form.html')
+ 
     
     
     

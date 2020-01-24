@@ -3,8 +3,6 @@ from django.http import HttpResponse
 from .models import House
 
 
-
-
 # Create your views here.
 def house_index(request):
     houses = House.objects.all()
@@ -13,6 +11,7 @@ def house_index(request):
     template_name = 'house_index.html'  
     context_object_name = 'houses'
     return render(request, 'house_index.html', context)
+
 
 def house_detail(request, id):
     

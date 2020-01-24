@@ -7,12 +7,14 @@ from blogo.models import Post
 from .forms import CommentForm
 from django.contrib.auth.models import User
 
+
 def blogo_index(request):
     posts = Post.objects.all().order_by('-created_on')
     context = {
         'posts': posts,
     }
     return render(request, "blogo_index.html", context)
+
 
 def blogo_category(request, category):
     posts = Post.objects.filter(
@@ -34,11 +36,10 @@ def blogo_detail(request, pk):
     context = {
         "post": post,
         "comments": comments,
-        "share_string":share_string,
+        "share_string": share_string,
     }
 
     return render(request, "blogo_detail.html", context)
-
 
 
 def blogo_detail(request, pk):

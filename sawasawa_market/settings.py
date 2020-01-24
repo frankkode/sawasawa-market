@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
-#import env
+import env
 import dj_database_url
 #import django_heroku
 
@@ -93,7 +93,9 @@ WSGI_APPLICATION = 'sawasawa_market.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 #if 'DATABASE_URL' in os.environ:
+
 DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+
 #else:
     #print('Database URL not found. Using SQLite instead')
     #DATABASES = {
