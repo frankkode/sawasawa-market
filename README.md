@@ -1,5 +1,5 @@
 
-# [SAWASA-MARKET](https://sawasawa-market.herokuapp.com/)
+# [SAWASAWA-MARKET](https://sawasawa-market.herokuapp.com/)
 
 ---  
 Full Stack Frameworks with Django, Python  - Milestone Project 4 for Code Institute by Frank Simplice MASABO
@@ -31,6 +31,13 @@ Since the website a market place, I chose dark-orange, vibrant colors.
 - buttons color: arange, blue, (Bootstap default)
 - Title : green
 - Date : blue
+
+#### Ranguage
+
+-Python3.7
+-Javascript
+-CSS
+-HTML
 
 #### Framework
 
@@ -307,7 +314,6 @@ EMAIL_HOST_PASSWORD | `<your_host_password>`
 ## Acknowledgements
 
 - The tutors, mentors and support staff at [Code Institute][5]
--
 - My mentor Anthony Ngene
 - My wife Yvette Iradukunda who encouraged me and support me in different ways
 
