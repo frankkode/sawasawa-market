@@ -10,7 +10,7 @@ Full Stack Frameworks with Django, Python  - Milestone Project 4 for Code Instit
 
 Project Purpose: In this project, I made a full-stack site based around business logic used to control a centrally-owned dataset, has an authentication mechanism and provide payment access to the site using stripe payment system.
 
-on SAWASAWA-MARKET you can sell your product free of charge, and donate some monay by choice, we provide adatabase controled apps where the owner of website can publish the advertise contents: cars, house for sale and rent, job publications and trainings, and blog where we publish contents that gives more knowledge to customers that use our website
+SAWASAWA-MARKET is envilonmental support website, you can sell your product free of charge, and donate some money by choice to save and protect envilonment, we provide adatabase controled apps where the owner of website can publish the advertise contents: cars, house for sale and rent, job publications, trainings, and blog where we publish contents that gives more knowledge to customers that use our website
 
 ## UX
 
