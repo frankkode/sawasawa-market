@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/frankkode/sawasawa-market.svg?branch=master)](https://travis-ci.com/frankkode/sawasawa-market)
 
 # [SAWASAWA-MARKET](https://sawasawa-market.herokuapp.com/)
 
