@@ -14,8 +14,9 @@
                 <h5 class="card-title">{{ jobb.title }}</h5>
                 <p class="card-text">{{ jobb.description|linebreaks|truncatewords:10 }}</p>
                 <a href="{% url 'jobbs:job_detail' id=jobb.id %}"
-                   class="btn btn-primary">
+                   class="btn btn-success btn-md btn-rounded mx-0">
                     Read More
+                       
                 </a>
             </div>
         </div>

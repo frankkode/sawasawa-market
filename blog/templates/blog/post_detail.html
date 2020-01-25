@@ -20,20 +20,25 @@
     
 </div>
 </div>
- <!-- Grid row -->
-<!-- Card Regular -->
-<div class="row gallery text-center">
-     {% for p in post.images_set.all %}
-    {% if p.image %}
-      <div class="col-md-3 text-center">
-      <a href="#" class="">
-        <img src="{{ p.image.url }}" alt="" class="img-thumbnail card-img-top"  onclick="myFunction(this);">
-     </a>
-      </div>
 
+<div class="display_posts text-center">
+<div id="" class="columns_4 ">
+	<div id="columns" class="columns_4">
+  <figure class="text-center">
+{% for p in post.images_set.all %}
+    {% if p.image %}
+      
+      <a href="#" class="gallery" >
+        <img src="{{ p.image.url }}" alt="" class="img-thumbnail card-img-top text-shadow mt-4"  onclick="myFunction(this);" >
+      </a>
+	
     {% endif %}
     {% endfor %}
-  </div>
+    </figure>
+</div>
+</div>
+</div>
+
 
 <!-- The expanding image container -->
 <div class="container">
@@ -41,7 +46,7 @@
   <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
 
   <!-- Expanded image -->
-  <img id="expandedImg" style="width:80%">
+  <img id="expandedImg" style="width:80%" class="img-thumbnail">
 
   <!-- Image text -->
   <div id="imgtext"></div>
@@ -61,7 +66,6 @@
   {% endif %}
 </div>
 </div>
-
 
   <div class="container py-5  z-depth-1">
   <section class="p-md-3 mx-md-5 text-lg-left">

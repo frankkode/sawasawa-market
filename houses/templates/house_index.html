@@ -13,7 +13,7 @@
                 <h5 class="card-title">{{ house.title }}</h5>
                 <p class="card-text">{{ house.description|linebreaks|truncatewords:10 }}</p>
                 <a href="{% url 'houses:house_detail' id=house.id %}"
-                   class="btn btn-primary">
+                   class="btn btn-pink btn-rounded btn-md">
                     Read More
                 </a>
             </div>
