@@ -8,6 +8,7 @@ Full Stack Frameworks with Django, Python  - Milestone Project 4 for Code Instit
 
 ## Project Summary
 
+SAWASAWA-MARKET is an online market where a user can sell his product free of charge, and donate by choice in order to support environment. a user can choose to advetise through admin(only the owner of the website can access admin side ), on advertisement side you can found house for sale or rent, cars and spare parts, jobs and trainings, blog.
 Project Purpose: In this project, I made a full-stack site based around business logic used to control a centrally-owned dataset, has an authentication mechanism and provide payment access to the site using stripe payment system.
 
 SAWASAWA-MARKET is envilonmental support website, you can sell your product free of charge, and donate some money by choice to save and protect envilonment, we provide adatabase controled apps where the owner of website can publish the advertise contents: cars, house for sale and rent, job publications, trainings, and blog where we publish contents that gives more knowledge to customers that use our website
@@ -28,22 +29,20 @@ Since the website a market place, I chose dark-orange, vibrant colors.
 
 - Base color: White( #fff)
 - Navigation,Footer color: dark-orange (#f3766f)
-- buttons color: arange, blue, (Bootstap default)
+- buttons color: arange, blue, (mdBootstap default)
 - Title : green
 - Date : blue
 
 #### Ranguage
 
--Python3.7
--Javascript
--CSS
--HTML
+- [Python3.7]
+- [Javascript]
+- [CSS]
+- [HTML]
 
 #### Framework
 
-- [Bootstrap 4]( https://getbootstrap.com/ )
-- [jQuery 3.4.1](https://code.jquery.com/jquery/)
-    -In an effort to keep the JavaScript minimal, I have decided to use jQuery as foundation to my scripts framework.
+- [mdbootstrap]( https://mdbootstrap.com/ )
 - [Django 3.0.2](https://www.djangoproject.com/download/)
     -Django is a free and open-source web framework that I've used to render the back-end Python with the front-end Bootstrap.
 
@@ -187,8 +186,8 @@ Tools:
 -[Git](https://en.wikipedia.org/wiki/Git)
 
 Databases:
--[SQLite](https://www.sqlite.org/docs.html)
--[PostgreSQL](https://www.postgresql.org/docs/)
+-[SQLite](https://www.sqlite.org/docs.html) SQlite was used for development database, which is provided by django.
+-[PostgreSQL](https://www.postgresql.org/docs/) The relational database PostgreSQL was used for production database, which is provided by Heroku.
 
 ## Testing
 
@@ -314,7 +313,7 @@ EMAIL_HOST_PASSWORD | `<your_host_password>`
 ## Acknowledgements
 
 - The tutors, mentors and support staff at [Code Institute][5]
-- My mentor Anthony Ngene
+- My mentor Anthony Ngene who helped me keep my priorities in order, and how to hundle security vulnerability.
 - My wife Yvette Iradukunda who encouraged me and support me in different ways
 
 ## Disclaimer
