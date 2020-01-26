@@ -62,19 +62,10 @@
     
     
       </div>
-
-
-
-
-
-
-
-
-
 <h2 class="text-center">Donate $20.00</h2>
 <div class="">
 <div class=" text-center">
-<form action="{% url 'charge' %}" method="post">
+<form action="{% url 'charge' %}" method="post"><i class="fas fa-hand-point-right green-text"></i> 
   {% csrf_token %}
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button green-text"
           data-key="{{ key }}"
