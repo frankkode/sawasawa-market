@@ -6,10 +6,8 @@ matrix:
     # should currently be able to use Python 2.6, 2.7, or 3.3 or later. The
     # NUMPY and SCIPY versions are set here as an example, but you can
     # add/remove environment variables, and use them below during the install.
-
-    - python: 2.7
-
-    - python: 3.7
+    - python: 3.7.6
+      env: NUMPY=1.18.1
 
 before_install:
   # Here we just install Miniconda, which you shouldn't have to change.
