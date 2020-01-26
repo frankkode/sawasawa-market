@@ -12,8 +12,6 @@ Full Stack Frameworks with Django, Python  - Milestone Project 4 for Code Instit
 SAWASAWA-MARKET is an online market where a user can sell his product free of charge, and donate by choice in order to support environment. a user can choose to advetise through admin(only the owner of the website can access admin side ), on advertisement side you can found house for sale or rent, cars and spare parts, jobs and trainings, blog.
 Project Purpose: In this project, I made a full-stack site based around business logic used to control a centrally-owned dataset, has an authentication mechanism and provide payment access to the site using stripe payment system.
 
-SAWASAWA-MARKET is envilonmental support website, you can sell your product free of charge, and donate some money by choice to save and protect envilonment, we provide adatabase controled apps where the owner of website can publish the advertise contents: cars, house for sale and rent, job publications, trainings, and blog where we publish contents that gives more knowledge to customers that use our website
-
 ## UX
 
 ### User Stories
@@ -192,7 +190,9 @@ Databases:
 
 ## Testing
 
-A thorough mix of automated and manual testing have gone into building the project. In addition to tests, I have validated all files against online validation sites, and checked compatibilities across various modern browsers and devices.
+-I used Travis Continuous Integration and all tests passed, The Travis link is at the top of this README. I have found it very useful in aligning integrated testing during development.
+
+-thorough mix of automated and manual testing have gone into building the project. In addition to tests, I have validated all files against online validation sites, and checked compatibilities across various modern browsers and devices.
 
 ### Validation services
 

@@ -1,7 +1,7 @@
 {% extends 'blog/base.html' %}
 {% block content  %}
 {% include 'blog/navigation.html' %}
-
+<!-- categories button-->
 <div class="container">
 <div class="row">
 
@@ -20,16 +20,16 @@
     
 </div>
 </div>
-
-<div class="display_posts text-center">
-<div id="" class="columns_4 ">
-	<div id="columns" class="columns_4">
-  <figure class="text-center">
+<!-- image on post details-->
+<div class="display_posts text-center mt-4 col-sm-12">
+<div id="" class="columns_4 text-center ">
+	<div id="columns" class="columns_4 ">
+  <figure class="col-sm-12 ">
 {% for p in post.images_set.all %}
     {% if p.image %}
       
       <a href="#" class="gallery" >
-        <img src="{{ p.image.url }}" alt="" class="img-thumbnail card-img-top text-shadow mt-4"  onclick="myFunction(this);" >
+        <img src="{{ p.image.url }}" alt="" class="img-thumbnail card-img-top text-shadow mt-4 ml-4"  onclick="myFunction(this);" >
       </a>
 	
     {% endif %}
@@ -38,8 +38,6 @@
 </div>
 </div>
 </div>
-
-
 <!-- The expanding image container -->
 <div class="container">
   <!-- Close the image -->
@@ -56,8 +54,48 @@
               
               <p class="blue-text text-muted ">------</p>
           </div>
-          
-  <!-- Section: Block Content -->
+
+<!-- post details seller, price and description -->
+
+<div class="container z-depth-1 my-5 py-5">
+
+  <!-- Section -->
+  <section>
+    
+    <style>
+      .border-top {
+        border-top-width: 2px !important;
+      }
+  	</style>
+
+    <h6 class="font-weight-bold text-center grey-text text-uppercase small mb-4">{{ post.date_posted }}</h6>
+    <h3 class="font-weight-bold text-center dark-grey-text pb-2">{{ post.title}}</h3>
+    <hr class="w-header my-4">
+    <p class="lead text-center text-muted pt-2 mb-5 text-capitalize">{{ post.description }}</p>
+
+    <div class="row d-flex justify-content-center">
+
+      <div class="col-md-6 col-lg-5 col-xl-4">
+        <h5 class="font-weight-normal border-top border-secondary pt-4 mb-4"><a class="dark-grey-text" href="#">
+            PRICE</a></h5>
+        <p class="font-weight-bold text-muted mb-5 pb-md-3">$ {{ post.price }}.00</p>
+      </div>
+
+      <div class="col-md-6 col-lg-5 col-xl-4">
+        <h5 class="font-weight-normal border-top border-secondary pt-4 mb-4"><a class="dark-grey-text"
+            href="#">SELLER</a></h5>
+        <p class="font-weight-bold text-muted mb-5 pb-md-3">{{ post.author}}</p>
+      </div>
+
+      <div class="w-100"></div>
+    </div>
+  </section>
+  <!-- Section -->
+
+</div>
+      
+  <!-- if user is authenticated this will show up on the post detail -->
+
  {% if post.author == user %}
           <div>
             <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' post.id %}">Update</a>
@@ -66,16 +104,12 @@
   {% endif %}
 </div>
 </div>
-
+<!-- address for the owner of the post-->
   <div class="container py-5  z-depth-1">
   <section class="p-md-3 mx-md-5 text-lg-left">
     <div class="row">
       <div class="col-12">
-        <h2 class="font-weight-bold mb-3 text-center">DESCRIPTION</h2>
-        <p class="lead py-3">
-          {{ post.description }}
-        </p>
-        <h3 class="orange-text text-center font-weight-bold">ADDRESS 
+        <h3 class="dark-grey-text text-center font-weight-bold">ADDRESS & CONTACT
           
         </h3>
       </div>
@@ -83,26 +117,30 @@
     <div class="row mt-5">
       <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
         <div class=" mt-3 text-center">
-          <i class="fa fa-map-marker-alt fa-3x indigo-text mb-4"></i>
-          <h4 class="font-weight-bold">{{ post.address }}</h4>
+          <i class="fa fa-map-marker-alt fa-2x indigo-text mb-4"></i>
+          <h6 class="font-weight-lighter deep-orange-text">Post address:</h6>
+          <h4 class="font-weight-bold text-capitalize">{{ post.address }}</h4>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
         <div class=" mt-3 text-center">
-          <i class="far fa-map fa-3x pink-text mb-4"></i>
-          <h4 class="font-weight-bold">{{ post.city }}</h4>
+          <i class="far fa-map fa-2x pink-text mb-4"></i>
+          <h6 class="font-weight-lighter deep-orange-text">City:</h6>
+          <h4 class="font-weight-bold text-capitalize">{{ post.city }}</h4>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 mb-md-0 mb-5">
         <div class=" mt-3 text-center">
-          <i class="fa fa-globe-africa fa-3x amber-text mb-4"></i>
-         	<h4 class="font-weight-bold">{{ post.country }}</h4>
+          <i class="fa fa-globe-africa fa-2x amber-text mb-4"></i>
+          <h6 class="font-weight-lighter deep-orange-text">Country:</h6>
+         	<h4 class="font-weight-bold text-capitalize">{{ post.country }}</h4>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 mb-md-0 mb-5">
         <div class=" mt-3 text-center">
-          <i class="fa fa-street-view fa-3x green-text mb-4"></i>
-         	<h4 class="font-weight-bold">Tel: {{ post.phone }}</h4>
+          <i class="fas fa-phone-volume fa-2x green-text mb-4"></i>
+          <h6 class="font-weight-lighter deep-orange-text">Phone:</h6>
+         	<h4 class="font-weight-bold text-capitalize">Tel: {{ post.phone }}</h4>
         </div>
       </div>
     </div>

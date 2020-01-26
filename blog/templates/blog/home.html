@@ -1,8 +1,9 @@
 {% extends 'blog/base.html' %}
 {% block content  %}
-
+<!--navigation-->
 {% include 'blog/navigation.html' %}
   <hr class="mb-5 mt-4">
+<!-- categories button-->
 
 <div class="calling">
 <div class="text-center d-none d-sm-none d-md-none d-lg-block">  
@@ -15,14 +16,12 @@
 <a  href="{% url 'houses:house_index' %}" class="btn margin-bottom-cat margin-right-cat" ><i class="fas fa-store-alt fa-3x indigo-text"></i>🏠 house for sell/rent </a>
 
 <!--Purple-->
-<a href="{% url 'jobbs:job_index' %}" class="btn margin-bottom-cat margin-right-cat" aria-hidden="true"><i class="fas fa-user-graduate fa-3x purple-text"></i><i class="fas fa-user-md fa-3x deep-purple-text"></i><strong> training & jobs</a>
-    
+<a href="{% url 'jobbs:job_index' %}" class="btn margin-bottom-cat margin-right-cat" aria-hidden="true"><i class="fas fa-user-graduate fa-3x purple-text"></i><i class="fas fa-user-md fa-3x deep-purple-text"></i><strong> training & jobs</a>   
 </div>
 </div>
- <!-- Grid row -->
+ <!-- image main post -->
 
 <div class="flex-container col s12 m6">
-
     {% for post in posts %}
     <div class="display_posts">
 <div id="wrap" class="columns_4">
@@ -43,7 +42,7 @@
 {% endfor %}
 </div>
  <div class="container my-5 py-5 z-depth-1">
-<!--Section: Content-->
+<!--Section: Content calling-->
     <section class="px-md-5 mx-md-5 text-center dark-grey-text">
 <!--Grid row-->
       <div class="row d-flex justify-content-center">
@@ -132,6 +131,7 @@
     </li>
   {% endif %}
 </ul>
+<!-- footer-->
 {% include 'blog/footer.html' %}
 {% endblock content %}
     
